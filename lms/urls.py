@@ -8,7 +8,7 @@ urlpatterns = [
     path('<int:pk>/update/', LessonRetrieveUpdateDestroyAPIView.as_view(), name='lesson_retrieve_update_destroy'),
 ]
 
-router = routers.SimpleRouter()
+router = routers.DefaultRouter()
 router.register(r'course', CourseViewSet)
 
 urlpatterns += router.urls
