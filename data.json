@@ -1,0 +1,86 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "12345",
+      "last_login": "2024-03-09T11:47:18.434Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "Adminov",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-03-09T08:11:32.318Z",
+      "email": "twistysmig@mail.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "123zxc",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Test",
+      "last_name": "Testov1",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-03-10T11:48:04Z",
+      "email": "test1@sky.pro",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "123zxc",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Test",
+      "last_name": "Testov2",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-03-10T11:49:32Z",
+      "email": "test2@sky.pro",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.Payment",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "payment_date": "2024-01-15",
+      "course": null,
+      "lesson": null,
+      "amount": "99999.00",
+      "payment_method": "cash"
+    }
+  },
+  {
+    "model": "users.Payment",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "payment_date": "2024-03-10",
+      "course": null,
+      "lesson": null,
+      "amount": "1500.00",
+      "payment_method": "transfer"
+    }
+  }
+]
