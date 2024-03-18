@@ -2,6 +2,7 @@ from rest_framework.generics import RetrieveAPIView, CreateAPIView, ListAPIView,
 from rest_framework.permissions import IsAuthenticated
 
 from lms.models import Lesson
+from lms.paginations import LessonPagination
 from lms.serializers.lesson import LessonSerializer
 from users.permissions import IsModerator, IsOwner
 
@@ -43,9 +44,10 @@ class LessonDeleteView(DestroyAPIView):
 class LessonListView(ListAPIView):
     serializer_class = LessonSerializer
     permission_classes = [IsAuthenticated, IsModerator | IsOwner]
+    pagination_class = LessonPagination
 
     def get_queryset(self):
         user = self.request.user
-        if user.is_moderator:
+        if user.groups.filter(name='moderator').exists():
             return Lesson.objects.all()
-        return Lesson.objects.filter(owner=user)
+        return Lesson.objects.filter(course__user=user)

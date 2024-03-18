@@ -2,12 +2,14 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
 from lms.models import Course
+from lms.paginations import CoursePagination
 from lms.serializers.course import CourseSerializer
 from users.permissions import IsModerator, IsOwner
 
 
 class CourseViewSet(ModelViewSet):
     serializer_class = CourseSerializer
+    pagination_class = CoursePagination
 
     def get_queryset(self):
         user = self.request.user
