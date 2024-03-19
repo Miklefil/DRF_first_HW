@@ -22,4 +22,3 @@ class SubscribeAPIView(APIView):
             message = 'Вы отписались от обновления курса'
 
         return Response({"message": message})
-

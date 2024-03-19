@@ -148,7 +148,7 @@ class SubscriptionTestCase(APITestCase):
             user=self.user
         )
 
-        #self.client.force_authenticate(user=self.user)
+        # self.client.force_authenticate(user=self.user)
         self.user.status = False
 
     def test_subscribe_to_course(self):
@@ -257,4 +257,3 @@ class SubscriptionTestCase(APITestCase):
             response.json(),
             {'detail': 'Страница не найдена.'}
         )
-

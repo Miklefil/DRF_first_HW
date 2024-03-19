@@ -23,4 +23,5 @@ class Payment(models.Model):
     lesson = models.ForeignKey('lms.Lesson', on_delete=models.CASCADE, verbose_name='Урок', related_name='payments',
                                **NULLABLE)
     amount = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Сумма')
-    payment_method = models.CharField(max_length=50, choices=[('cash', 'Cash'), ('transfer', 'Transfer')], verbose_name='Способ оплаты')
+    payment_method = models.CharField(max_length=50, choices=[('cash', 'Cash'), ('transfer', 'Transfer')],
+                                      verbose_name='Способ оплаты')

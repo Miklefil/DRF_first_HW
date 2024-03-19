@@ -18,7 +18,4 @@ class UrlValidator:
         for allowed_domain in ALLOWED_DOMAINS:
             if allowed_domain in url:
                 return
-
         raise ValidationError('Ссылки на сторонние видео запрещены')
-
-

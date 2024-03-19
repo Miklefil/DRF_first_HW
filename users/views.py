@@ -9,4 +9,3 @@ class PaymentList(generics.ListAPIView):
     filter_backends = [filters.OrderingFilter, filters.SearchFilter]
     ordering_fields = ['payment_date']
     search_fields = ['course__title', 'lesson__title', 'payment_method']
-
