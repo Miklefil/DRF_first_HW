@@ -176,5 +176,20 @@ CELERY_TASK_TRACK_STARTED = True
 # Максимальное время на выполнение задачи
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+
+CELERY_BEAT_SCHEDULE = {
+    'task-name': {
+        'task': 'users.tasks.check_all_users_last_login',  # Путь к задаче
+        'schedule': timedelta(hours=1),  # Расписание выполнения задачи (например, каждые 10 минут)
+    },
+}
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+DEFAULT_RECIPIENT = os.getenv('EMAIL')
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
