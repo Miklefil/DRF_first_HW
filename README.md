@@ -1,3 +1,13 @@
+Настройка DRF в Docker
+Сборка с yaml файлом
+Создание образа из Dockerfile: docker-compose build
+
+с запуском контейнера: docker-compose up --build
+
+с запуском контейнера в фоновом режиме: docker-compose up -d --build
+
+Запуск контейнера: docker-compose up
+
 Задание 1
 Создайте новый Django-проект, подключите DRF в настройках проекта.
 
